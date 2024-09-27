@@ -1,0 +1,58 @@
+package arraylist;
+
+import java.util.Scanner;
+
+
+public class main {
+    public static void main(String[] args){
+        
+       
+        Scanner sc = new Scanner(System.in);
+        
+        //add a default list
+        ItemManager list = new ItemManager();
+        list.addColor("Pink");
+        
+        
+        //displaying the updated items
+        list.displayItems();
+        
+        //Added a println that corresponds with the codes on ItemManager.java
+        System.out.println("Enter the Color You Want to Add: ");
+        String item = sc.nextLine();
+        
+        //adding  color item
+        list.addColor(item);
+        
+        //To have the user change color
+        System.out.println("Enter the Color You Want to Change: " );
+        String newItem = sc.nextLine();
+        //To indicate which index the user wants to be change
+        System.out.println("Enter Index Number: ");
+        int index = sc.nextInt();
+        
+        //display the most recent color list
+        list.updateItem(index, newItem);
+        list.displayItems();
+        //For the following user input, to change the code back to String
+        sc.nextLine();
+        
+        //Added a println that matches codes on ItemManager.java
+        System.out.println("Enter the Color You Want to Find:" );
+        String findItem = sc.nextLine();
+        
+        //finding item
+        list.findItem(findItem);
+        list.displayItems();
+        
+        //Added a println that matches codes on ItemManager.java
+        System.out.println("Enter Index Number of the Color You Want to Delete: ");
+        int deleteIndex = sc.nextInt();
+        
+        //removal items
+        list.deleteItem(deleteIndex);
+        list.displayItems();
+        sc.close();
+        
+    }
+}
